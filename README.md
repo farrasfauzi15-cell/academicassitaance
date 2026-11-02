@@ -1,1 +1,469 @@
 # academicassitaance
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Assistance — Muhammad Farras Fauzi</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            mono: {
+              50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1',
+              400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155',
+              800: '#1e293b', 900: '#0f172a', 950: '#09090b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #09090b; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 9999px; }
+
+    /* Monochrome Card Glass */
+    .mono-card {
+      background: rgba(18, 18, 20, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(16px);
+      transition: all 0.35s ease;
+    }
+    .mono-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll Animation Fade & Pop Up */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+
+<body class="bg-zinc-950 text-zinc-100 font-sans min-h-screen flex flex-col justify-between selection:bg-zinc-700 selection:text-white">
+
+  <!-- TOP BAR NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/80 px-4 md:px-8 py-3.5">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-zinc-100 text-zinc-950 flex items-center justify-center font-black text-xs">
+          MF
+        </div>
+        <div>
+          <span class="font-extrabold text-sm tracking-tight text-zinc-100 block leading-none">M. FARRAS FAUZI</span>
+          <span class="text-[10px] text-zinc-500 font-mono tracking-wider uppercase">Academic Assistance</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi (Pencet / Scroll Bekerja Bersamaan) -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-zinc-400">
+        <a href="#overview" class="hover:text-zinc-100 transition">Overview</a>
+        <a href="#portfolio" class="hover:text-zinc-100 transition">Portofolio & Bukti</a>
+        <a href="#pricelist" class="hover:text-zinc-100 transition">Daftar Harga</a>
+        <a href="#payment" class="hover:text-zinc-100 transition">Rekening</a>
+      </nav>
+
+      <button onclick="openWAModal('Umum')" class="px-4 py-2 rounded-lg bg-zinc-100 hover:bg-zinc-300 text-zinc-950 font-bold text-xs transition shadow-sm flex items-center gap-2">
+        <i class="fa-brands fa-whatsapp text-sm"></i> Order / Tanya Admin
+      </button>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER (SCROLLABLE SECTIONS WITH POP-UP TRANSITIONS) -->
+  <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 space-y-24 py-10">
+
+    <!-- ========================================================= -->
+    <!-- SECTION 1: OVERVIEW & HERO (WITH STUDY ANIMATION)        -->
+    <!-- ========================================================= -->
+    <section id="overview" class="reveal pt-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Penulis Jurnal Sinta 3 • Expert Statistical Analyst
+          </div>
+
+          <h1 class="text-3xl md:text-5xl font-black tracking-tight text-zinc-50 leading-tight">
+            PUSING TUGAS & SKRIPSI? <br />
+            <span class="text-zinc-400 underline decoration-zinc-700 underline-offset-8">JOKIIN AJA!</span>
+          </h1>
+
+          <div class="p-5 rounded-xl mono-card border-l-4 border-l-zinc-300 space-y-2">
+            <p class="text-sm md:text-base font-bold text-zinc-100">
+              Cepat Lulus, Joki Baru Diajarin Sampe Paham! Ortu Mu Pasti Bangga! 🎓✨
+            </p>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Solusi pendampingan tugas perkuliahan, makalah analisis, hingga pengerjaan skripsi utuh (Bab 1–6) bergaransi revisi sampai ACC dosen dan pendampingan materi sidang.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <button onclick="openWAModal('Umum')" class="px-5 py-3 rounded-lg bg-zinc-100 hover:bg-zinc-300 text-zinc-950 font-bold text-xs uppercase tracking-wider transition">
+              <i class="fa-brands fa-whatsapp mr-1 text-sm"></i> Konsultasi WA
+            </button>
+            <a href="#pricelist" class="px-5 py-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-semibold text-xs border border-zinc-800 transition">
+              Cek Daftar Harga
+            </a>
+          </div>
+        </div>
+
+        <!-- Animasi Visual AI Belajar & Foto Profil -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-3">
+          <div class="mono-card rounded-2xl overflow-hidden p-2 text-center">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=400" alt="Belajar & Riset" class="w-full h-36 object-cover rounded-xl grayscale hover:grayscale-0 transition duration-500"/>
+            <div class="p-2 text-[11px] font-semibold text-zinc-400">Riset Mendalam</div>
+          </div>
+          <div class="mono-card rounded-2xl overflow-hidden p-2 text-center">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400" alt="Diskusi Bimbingan" class="w-full h-36 object-cover rounded-xl grayscale hover:grayscale-0 transition duration-500"/>
+            <div class="p-2 text-[11px] font-semibold text-zinc-400">Diajarin Sampai Paham</div>
+          </div>
+          <div class="col-span-2 mono-card rounded-2xl overflow-hidden p-2 flex items-center gap-3">
+            <img src="WhatsApp Image 2026-11-02 at 18.32.50.jpeg" alt="Muhammad Farras Fauzi" class="w-20 h-20 object-cover rounded-xl grayscale contrast-125"/>
+            <div>
+              <div class="text-xs font-bold text-zinc-100">Muhammad Farras Fauzi</div>
+              <div class="text-[11px] text-zinc-400">Peneliti Utama & Academic Assistant</div>
+              <div class="text-[10px] text-emerald-400 font-mono mt-1">✓ Verified Academic Partner</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 2: PORTOFOLIO & BUKTI NYATA                       -->
+    <!-- ========================================================= -->
+    <section id="portfolio" class="reveal space-y-8 border-t border-zinc-900 pt-16">
+      
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-zinc-500">// 02. PROOF OF WORK</span>
+        <h2 class="text-2xl font-extrabold text-zinc-100 mt-1">📸 Portofolio & Bukti Transaksi Nyata</h2>
+        <p class="text-xs text-zinc-400 mt-1">Bukti publikasi jurnal terindeks Sinta 3, olah data statistik WarpPLS, dan screenshot transfer BNI.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Bukti 1: Jurnal Sinta 3 -->
+        <div class="mono-card rounded-2xl overflow-hidden p-4 space-y-3 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="aspect-video bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+              <img src="Screenshot 2026-02-03 171607.png" alt="Publikasi Jurnal Sinta 3" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition duration-500"/>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-emerald-400 font-bold">JURNAL SINTA 3 INDEXED</span>
+            <h3 class="font-bold text-xs text-zinc-100 leading-snug">
+              The Effect of Fixed Income And Variable Income on Employee Job Satisfaction
+            </h3>
+            <div class="text-[11px] text-zinc-400">
+              <strong>Penulis Utama:</strong> Muhammad Farras Fauzi <br/>
+              <span class="text-zinc-500 text-[10px]">(Co-Authors 2 & 3 disensor demi privasi)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bukti 2: Olah Data WarpPLS -->
+        <div class="mono-card rounded-2xl overflow-hidden p-4 space-y-3 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="aspect-video bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+              <img src="Screenshot 2026-05-01 123405.png" alt="Olah Data WarpPLS" class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition duration-500"/>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-sky-400 font-bold">WARPPLS 8.0 / SEM MODEL</span>
+            <h3 class="font-bold text-xs text-zinc-100 leading-snug">
+              Analisis Model Persamaan Struktural ($R^2 = 0.70$)
+            </h3>
+            <p class="text-[11px] text-zinc-400">
+              Pengujian statistik variabel moderasi, mediasi, p-values, & interpretasi Bab 4 mendalam.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bukti 3: Transfer BNI Rp500.000 Bersensor -->
+        <div class="mono-card rounded-2xl overflow-hidden p-4 space-y-3 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="aspect-video bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+              <img src="WhatsApp Image 2026-11-02 at 19.08.55 (1)_2.jpeg" alt="Transfer BNI 500k" class="w-full h-full object-cover object-top"/>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-amber-400 font-bold">PROOF OF PAYMENT (BNI)</span>
+            <div class="text-[11px] text-zinc-300 space-y-0.5">
+              <div>Penerima: <strong class="text-zinc-100">MUHAMMAD FARRAS FAUZI</strong></div>
+              <div>Bank BNI: <span class="font-mono text-emerald-400">1796960921</span></div>
+              <div class="text-[10px] text-zinc-500">*Nama pengirim tertutup sensor putih rapi[cite: 22].</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 3: DAFTAR HARGA & PAKET (MONOCHROME DARK DECOY)  -->
+    <!-- ========================================================= -->
+    <section id="pricelist" class="reveal space-y-8 border-t border-zinc-900 pt-16">
+      
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-zinc-500">// 03. PRICELIST & PACKAGES</span>
+        <h2 class="text-2xl font-extrabold text-zinc-100 mt-1">💰 Daftar Harga Layanan</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Makalah Satuan -->
+        <div class="mono-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-400">PER TUGAS</span>
+            <h3 class="font-extrabold text-base text-zinc-100">1. Jasa Makalah & Tugas</h3>
+            <div class="space-y-3 text-xs border-t border-zinc-800 pt-3 text-zinc-300">
+              <div>
+                <div class="font-bold text-zinc-200">Makalah Standar</div>
+                <div class="text-emerald-400 font-mono">Rp7.000 – Rp8.000 / Lembar</div>
+                <div class="text-[11px] text-zinc-500">Gratis Sampul Depan, Formatting & 1x Revisi.</div>
+              </div>
+              <div>
+                <div class="font-bold text-zinc-200">Makalah Analisis Kasus</div>
+                <div class="text-emerald-400 font-mono">Rp100.000 – Rp450.000</div>
+              </div>
+              <div>
+                <div class="font-bold text-zinc-200">Formatting & Editing Total</div>
+                <div class="text-emerald-400 font-mono">Rp50.000 – Rp500.000</div>
+              </div>
+            </div>
+          </div>
+          <button onclick="openWAModal('Makalah Standar')" class="w-full py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-200">
+            Pilih Makalah
+          </button>
+        </div>
+
+        <!-- Skripsi Satuan (Decoy Expensive) -->
+        <div class="mono-card rounded-2xl p-6 flex flex-col justify-between space-y-4 border-rose-900/40 bg-rose-950/10">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-950 text-rose-300">REVISI TERBATAS</span>
+            <h3 class="font-extrabold text-base text-rose-200">2. Skripsi Satuan (Per Bab)</h3>
+            <div class="p-2.5 rounded bg-rose-950/40 border border-rose-900/50 text-[11px] text-rose-300">
+              ⚠️ <strong>Mikir 2x Ambil Satuan!</strong><br/>
+              Proposal + Hasil terpisah total = <strong>Rp5.700.000!</strong> (Tanggung & revisi terbatas).
+            </div>
+            <div class="space-y-2 text-xs text-zinc-300">
+              <div>Proposal (Bab 1-3): <strong class="text-rose-400 font-mono">Rp2.350.000</strong> <span class="text-[10px] text-zinc-500">(2x Revisi)</span></div>
+              <div>Hasil (Bab 4-6): <strong class="text-rose-400 font-mono">Rp3.350.000</strong> <span class="text-[10px] text-zinc-500">(2x Revisi)</span></div>
+              <div>Olah Data Only: <strong class="text-emerald-400 font-mono">Rp1.500.000</strong></div>
+            </div>
+          </div>
+          <button onclick="openWAModal('Skripsi Per Bab')" class="w-full py-2.5 rounded-lg bg-rose-950/80 hover:bg-rose-900 border border-rose-800 text-xs font-bold text-rose-200">
+            Ambil Per Bab
+          </button>
+        </div>
+
+        <!-- PAKET ALL-IN (BEST VALUE) -->
+        <div class="mono-card rounded-2xl p-6 flex flex-col justify-between space-y-4 border-zinc-100 bg-zinc-900/80">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500 text-zinc-950 font-bold">BEST VALUE</span>
+              <span class="text-[10px] text-emerald-400 font-bold">BEBAS REVISI & MENTORING</span>
+            </div>
+            <h3 class="font-extrabold text-base text-zinc-100">3. PAKET ALL-IN (TERIMA BERES)</h3>
+            <div class="space-y-3 text-xs border-t border-zinc-800 pt-3">
+              <div>
+                <div class="font-bold text-zinc-100">PAKET SILVER — <span class="text-emerald-400 font-mono">Rp5.500.000</span></div>
+                <div class="text-[11px] text-zinc-400">Full Bab 1-6 + Olah Data. (Hemat Rp1.7 Juta + Garansi ACC).</div>
+              </div>
+              <div>
+                <div class="font-bold text-amber-300">PAKET GOLD — <span class="text-emerald-400 font-mono">Rp6.200.000</span></div>
+                <div class="text-[11px] text-zinc-400">Full Skripsi + Teknis + Mendeley + Abstrak.</div>
+              </div>
+              <div>
+                <div class="font-bold text-cyan-300">PAKET DIAMOND — <span class="text-emerald-400 font-mono">Rp7.000.000</span></div>
+                <div class="text-[11px] text-zinc-400">VVIP + PPT Sidang + Prioritas Jalur Kilat.</div>
+              </div>
+            </div>
+          </div>
+          <button onclick="openWAModal('Paket Gold (Rp6.200.000)')" class="w-full py-3 rounded-lg bg-zinc-100 hover:bg-zinc-300 text-zinc-950 font-black text-xs uppercase tracking-wider">
+            Pilih Paket All-In
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 4: SYARAT & REKENING PEMBAYARAN                   -->
+    <!-- ========================================================= -->
+    <section id="payment" class="reveal space-y-8 border-t border-zinc-900 pt-16">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-zinc-500">// 04. TERMS & CONDITIONS</span>
+          <h2 class="text-xl font-bold text-zinc-100 mt-1 mb-4">⚠️ Syarat & Ketentuan</h2>
+          <ul class="text-xs text-zinc-400 space-y-2 list-disc pl-4 leading-relaxed">
+            <li>Sistem Pembayaran: Wajib DP 40% di awal sebagai tanda jadi.</li>
+            <li>Nomor Antrian: Pengerjaan resmi diproses setelah konfirmasi DP.</li>
+            <li><strong>Penyesuaian Estimasi Harga:</strong> Estimasi harga awal bisa berubah dari draf awal, menyesuaikan sepenuhnya dengan permintaan jokian Anda.</li>
+            <li>Kenapa mahal? Karena pengerjaan skripsi itu sulit. Kalau mudah, Anda tidak mencari joki. 🙏🏻</li>
+            <li>No Harga Teman: Hargai karya profesional.</li>
+            <li><strong>Konsultasi & Mentoring pada paket All-In GRATIS!</strong></li>
+          </ul>
+        </div>
+
+        <div class="mono-card rounded-2xl p-6 space-y-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-zinc-500">💳 METODE PEMBAYARAN RESMI</span>
+          <div class="text-xs text-rose-400 font-bold">Hanya atas nama MUHAMMAD FARRAS FAUZI</div>
+          
+          <div class="space-y-2 text-xs font-mono border-t border-zinc-800 pt-3">
+            <div class="p-2.5 rounded bg-zinc-950 border border-zinc-800 flex justify-between items-center">
+              <span><strong>BNI:</strong> 1796960921</span>
+              <button onclick="copyToClipboard('1796960921')" class="text-[10px] px-2 py-1 bg-zinc-800 hover:bg-zinc-700 rounded text-zinc-200">Salin</button>
+            </div>
+            <div class="p-2.5 rounded bg-zinc-950 border border-zinc-800 flex justify-between items-center">
+              <span><strong>BPD KALTIMTARA:</strong> 1148005237</span>
+              <button onclick="copyToClipboard('1148005237')" class="text-[10px] px-2 py-1 bg-zinc-800 hover:bg-zinc-700 rounded text-zinc-200">Salin</button>
+            </div>
+            <div class="p-2.5 rounded bg-zinc-950 border border-zinc-800 flex justify-between items-center">
+              <span><strong>DANA:</strong> 087776824248</span>
+              <button onclick="copyToClipboard('087776824248')" class="text-[10px] px-2 py-1 bg-zinc-800 hover:bg-zinc-700 rounded text-zinc-200">Salin</button>
+            </div>
+          </div>
+          <div class="text-[10px] text-zinc-500">*Tidak ada nomor rekening selain 3 di atas!</div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- MODAL / POP-UP CHOICE SELECTION DIRECT TO WHATSAPP        -->
+  <!-- ========================================================= -->
+  <div id="waModal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4">
+    <div class="mono-card rounded-2xl max-w-md w-full p-6 space-y-5 border border-zinc-700 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      
+      <button onclick="closeWAModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div>
+        <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest">// AUTOMATIC QUEUE SYSTEM</span>
+        <h3 class="text-lg font-bold text-zinc-100">Pilih Keperluan Konsultasi</h3>
+        <p class="text-xs text-zinc-400 mt-1">Pilih menu di bawah ini untuk mendapatkan template pesan & nomor antrian otomatis:</p>
+      </div>
+
+      <div class="space-y-2 text-xs">
+        
+        <button onclick="selectChoiceAndSend('Tanya-Tanya Dulu / Konsultasi')" class="w-full p-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-left flex justify-between items-center text-zinc-200">
+          <span>💬 1. Tanya-Tanya Dulu / Konsultasi Gratis</span>
+          <i class="fa-solid fa-chevron-right text-zinc-600"></i>
+        </button>
+
+        <button onclick="selectChoiceAndSend('Paket Silver (Rp5.500.000)')" class="w-full p-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-left flex justify-between items-center text-zinc-200">
+          <span>🥈 2. Paket Silver (Full Skripsi + Olah Data)</span>
+          <i class="fa-solid fa-chevron-right text-zinc-600"></i>
+        </button>
+
+        <button onclick="selectChoiceAndSend('Paket Gold (Rp6.200.000)')" class="w-full p-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-left flex justify-between items-center text-zinc-200">
+          <span>🥇 3. Paket Gold (Full Skripsi + Teknis + Mendeley)</span>
+          <i class="fa-solid fa-chevron-right text-zinc-600"></i>
+        </button>
+
+        <button onclick="selectChoiceAndSend('Paket Diamond VVIP (Rp7.000.000)')" class="w-full p-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-left flex justify-between items-center text-zinc-200">
+          <span>💎 4. Paket Diamond VVIP (Full + PPT + Prioritas)</span>
+          <i class="fa-solid fa-chevron-right text-zinc-600"></i>
+        </button>
+
+        <button onclick="selectChoiceAndSend('Jasa Makalah / Tugas Harian')" class="w-full p-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-left flex justify-between items-center text-zinc-200">
+          <span>📚 5. Jasa Makalah & Tugas Harian</span>
+          <i class="fa-solid fa-chevron-right text-zinc-600"></i>
+        </button>
+
+      </div>
+
+      <div class="text-[11px] text-zinc-500 text-center font-mono">
+        Nomor antrian resmi akan digenerate otomatis setelah pesan WA terkirim.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-zinc-900 py-6 text-center text-xs text-zinc-500">
+    <div class="max-w-6xl mx-auto px-4">
+      <p>© 2026 Academic Assistance — Muhammad Farras Fauzi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT INTERAKTIF (SCROLL ANIMATION & MODAL WA) -->
+  <script>
+    // Reveal Animation On Scroll
+    function reveal() {
+      const reveals = document.querySelectorAll(".reveal");
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", reveal);
+    reveal(); // Trigger initial
+
+    // Modal Control
+    function openWAModal(defaultService) {
+      document.getElementById('waModal').classList.remove('hidden');
+    }
+
+    function closeWAModal() {
+      document.getElementById('waModal').classList.add('hidden');
+    }
+
+    // Select Choice & Redirect to WhatsApp with Automatic Queue No.
+    function selectChoiceAndSend(choice) {
+      const queueNo = 'AA-' + Math.floor(1000 + Math.random() * 9000);
+      
+      const message = `Halo Admin Academic Assistance (Muhammad Farras Fauzi),%0A%0ASaya mau pesan/konsultasi layanan berikut:%0A%0A📌 *DATA PEMESANAN:*%0A• *Nomor Antrian Otomatis:* ${queueNo}%0A• *Pilihan Layanan:* ${encodeURIComponent(choice)}%0A%0AMohon informasi estimasi waktu dan nomor rekening DP untuk konfirmasi antrian resmi ya kak. Terima kasih!`;
+
+      window.open(`https://wa.me/6287776824248?text=${message}`, '_blank');
+      closeWAModal();
+    }
+
+    // Copy Account Number
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text);
+      alert('Nomor Rekening / DANA (' + text + ') berhasil disalin!');
+    }
+  </script>
+
+</body>
+</html>
